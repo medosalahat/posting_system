@@ -32,6 +32,20 @@ Class Slider_md extends CI_Model
 
 
     }
+    public function ___SET_NEW_Slider($img,$title,$text)
+    {
+        $arr=array(
+            $this->slider_table->__GET_TITLE()=>$title,
+            $this->slider_table->__GET_TEXT()=>$text,
+            $this->slider_table->__GET_IMAGE()=>$img['file']
+        );
+        $this->db->insert($this->slider_table->__GET_TABLE(), $arr);
+        $insert_id = $this->db->insert_id();
+        $this->db->trans_complete();
+
+        return $insert_id;
+
+    }
     function DeleteSql($sql){IF($this->db->query($sql)){return true;}else{return false;}}
 
 

@@ -44,11 +44,11 @@ class Function_slider extends CI_Controller
     function upload_new_image()
     {
 
-        $this->load->library('user/edit_image');
+        $this->load->model('admin/slider_md');
         $this->load->library('upload_image');
-        $file = $this->edit_image->___SET_NEW_IMAGE_POST($this->upload_image->move_file("file"));
+        $this->slider_md->___SET_NEW_Slider($this->upload_image->move_file("file"),$_POST['title'],$_POST['text']);
 
-        echo base_url().$file;
+
 
 
     }
