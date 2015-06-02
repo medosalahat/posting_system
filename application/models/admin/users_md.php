@@ -22,6 +22,15 @@ Class Users_md extends CI_Model
 
         return  $this->db->get()->result_array();
     }
+    public function ___DB_GET_USERS2()
+    {
+
+        $this->db->select('*');
+
+        $this->db->from($this->user_table->__GET_TABLE());
+
+        return  $this->db->get()->result_array();
+    }
 
     public function ___EDIT_USER($ID , $COLUMNS_ID , $ADMIN ,$COLUMNS_ADMIN,$TABLE)
     {

@@ -67,9 +67,10 @@ Class Chat_md extends CI_Model
 
     public function __SET_NEW_CHAT($TEXT, $ID_USER, $TABLE, $CLOUMN, $CLOUMNS_USER)
     {
+
         $d=$this->chat_table->__GET_SHOW();
 
-        $array = array($CLOUMN => $TEXT, $CLOUMNS_USER => $ID_USER ,$d=> '1');
+        $array = array($CLOUMN => $TEXT, $CLOUMNS_USER => $ID_USER ,$d=> '0');
 
         $this->db->insert($TABLE, $array);
         $insert_id = $this->db->insert_id();

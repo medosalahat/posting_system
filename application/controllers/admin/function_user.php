@@ -22,7 +22,7 @@ class Function_user extends CI_Controller
 
         $this->load->model('admin/users_md');
 
-        echo json_encode($this->users_md->___DB_GET_USERS()) ;
+        echo json_encode($this->users_md->___DB_GET_USERS2()) ;
 
     }
 

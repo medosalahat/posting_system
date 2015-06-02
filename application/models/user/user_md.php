@@ -8,6 +8,34 @@ Class User_md extends CI_Model
         $this->load->library('table/user_table');
 
     }
+    function UpDEat($id,$password){
+
+        $this->db->where('id',$id);
+
+        return   $this->db->update('user', array('password'=>$password));
+
+
+         $this->db->trans_complete();
+    }
+    function __GET_DATA_CO($username,$email,$mobile,$college,$specialty)
+    {
+        $this->db->select('*');
+
+        $this->db->from('user');
+
+        $this->db->where(
+            array(
+                'username' => $username,
+                'college' => $college,
+                'mobile' => $mobile,
+                'specialty' => $specialty,
+                'email' => $email
+            )
+        );
+        $this->db->limit(1);
+        return $this->db->get()->result_array() ;
+
+    }
 
     public function __GET_IMAGE($value ,$columns ,$cloumns_2 ,$TABLE)
     {

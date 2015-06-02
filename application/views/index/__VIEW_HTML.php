@@ -136,10 +136,9 @@
                         By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#"
                                                                                                                data-toggle="modal"
                                                                                                                data-target="#t_and_c_m">Terms
-                            and Conditions</a> set out by this site, including our Cookie Use.
+                            and Conditions</a> set out by this site, including our Cookie Use.<a href="<?= base_url().'user/forgot'?>" target="_blank">Forgot your password?</a>
                     </div>
                 </div>
-
                 <hr class="colorgraph">
                 <div class="row">
                     <div class="col-xs-12 col-md-12"><input type="submit" id="Register" value="Register" disabled="true"

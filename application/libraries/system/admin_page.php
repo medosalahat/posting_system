@@ -65,6 +65,10 @@ class admin_page
 
         return base_url().'admin/members';
     }
+    public function __GET_ADMIN_SECTION_PAGE_s(){
+
+        return base_url().'section';
+    }
 
 
 

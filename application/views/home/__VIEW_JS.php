@@ -19,6 +19,8 @@
 
     var myVar ;
 
+    var me_user='<?=$INFO_USER[0] ?>';
+
     var image_user = '<img src="<?= base_url().$INFO_USER[1] ?>" title="<?= $INFO_USER[0] ?>" class="img-circle"/> <?= $INFO_USER[0] ?>';
 
 
@@ -59,6 +61,8 @@
                                 hr_class
                             );
                             $(id_text).val('');
+
+                            $(id_body).animate({scrollTop: $(id_body).prop("scrollHeight")}, 500);
 
                         } else {
                             alert("Error");
@@ -123,6 +127,7 @@
                 if(result != '')
                 {
                     $.each(result, function(i) {
+                        if(result[i].<?=$T_USER[1]?> != me_user){
                         $(id_body).append(
                             body_row_start_new+
                             result[i].<?=$T_CHAT[2]?>+
@@ -133,7 +138,9 @@
                             body_user_send_end_new+
                             hr_class
                         );
+                        $(id_body).animate({scrollTop: $(id_body).prop("scrollHeight")}, 500);
                         playSound();
+                        }
                     });
                 }
 

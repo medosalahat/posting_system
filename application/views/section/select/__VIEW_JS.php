@@ -112,6 +112,7 @@
 
 
     });
+    var me_user='<?=$INFO_USER[0] ?>';
 
     $(document).ready(function(){
 
@@ -123,17 +124,19 @@
                 if(result != '')
                 {
                     $.each(result, function(i) {
-                        $(id_body).append(
-                            body_row_start_new+
-                            result[i].<?=$T_CHAT[2]?>+
-                            body_row_end_new+
-                            body_user_send_start_new+
-                            '<img src="<?= base_url()?>'+result[i].<?=$T_USER[3]?>+'" title="'+result[i].<?=$T_USER[1]?>+
-                            '" class="img-circle"/> - '+result[i].<?=$T_USER[1]?>+
-                            body_user_send_end_new+
-                            hr_class
-                        );
-                        playSound();
+                        if(result[i].<?=$T_USER[1]?> != me_user) {
+                            $(id_body).append(
+                                body_row_start_new +
+                                result[i].<?=$T_CHAT[2]?> +
+                                body_row_end_new +
+                                body_user_send_start_new +
+                                '<img src="<?= base_url()?>' + result[i].<?=$T_USER[3]?> + '" title="' + result[i].<?=$T_USER[1]?> +
+                                '" class="img-circle"/> - ' + result[i].<?=$T_USER[1]?> +
+                                body_user_send_end_new +
+                                hr_class
+                            );
+                            playSound();
+                        }
                     });
                 }
 
