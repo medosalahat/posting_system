@@ -39,7 +39,9 @@ Class Post_md extends CI_Model
         (SELECT $IMAGE from $TABLE_USER WHERE $ID_USER_TABLE =  $ID_USER) $IMAGE ,
         $TEXT ,
         $MEDIA_ID,
-        $DATE_TIME
+        $DATE_TIME,
+         (SELECT isadmin from $TABLE_USER WHERE $ID_USER_TABLE =  $ID_USER) isadmin ,
+         (SELECT level from $TABLE_USER WHERE $ID_USER_TABLE =  $ID_USER) level
 
         ";
 
@@ -82,7 +84,8 @@ Class Post_md extends CI_Model
         (SELECT $IMAGE from $TABLE_USER WHERE $ID_USER_TABLE =  $ID_USER) $IMAGE ,
         $TEXT ,
         $MEDIA_ID,
-        $DATE_TIME
+        $DATE_TIME ,
+
 
         ";
 

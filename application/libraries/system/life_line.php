@@ -90,9 +90,7 @@ class Life_line
 
             'CONTACT US'   => $this->__GET_CONTACT_US()  ,
 
-            'SECTION'   => $this->CI->admin_page->__GET_ADMIN_SECTION_PAGE_s()  ,
-
-
+            'SECTION'   => $this->__GET_SECTION_PAGE()  ,
 
             'LOGOUT'       => $this->__GET_LOGOUT_PAGE()
 

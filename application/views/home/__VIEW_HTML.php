@@ -2,9 +2,9 @@
     <div class="row home_background">
         <div class="col-md-6 col-sm-8 col-xs-12">
             <?PHP foreach($post as $news){ ?>
+            <?PHP if($news['isadmin'] > 0 || $news['level'] > 0){ ?>
             <div class="panel panel-default">
                 <div class="panel-heading">
-
                     <div class="media">
                         <a href="<?= base_url().'user/profile?id='.$news['id_user']?>" class="pull-left">
                             <img src=" <?= base_url().$news[$T_USER_N[3]]?>" class="media-object media_image_header"/>
@@ -50,6 +50,7 @@
                                type="text" style="padding-left: 9px;">
                 </div>
             </div>
+            <?PHP } ?>
             <?PHP } ?>
 
 
